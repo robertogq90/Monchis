@@ -1,0 +1,15 @@
+﻿<div class="row" ng-form="form">
+
+    <div class="form-item col-xs-12 col-sm-12 col-md-12">
+        <label for="UserName">Usuario</label>
+        <input type="text" id="userName" name="userName" ng-model="Entity.userName" required />
+    </div>
+
+    <div class="form-item col-xs-12 col-sm-12 col-md-12">
+        <label for="Password">Contraseña</label>
+        <input type="password" id="password" name="password" ng-model="Entity.password" required />
+    </div>
+
+    <button class="btn btn-primary btn-lg" ng-click="SignIn()" ng-disabled="!form.$valid"><span>Entrar</span></button>
+
+</div>

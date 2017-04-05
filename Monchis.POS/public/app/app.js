@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module("POS", ['ngRoute', 'ngStorage', 'ui.grid', 'HttpInterceptorFactory', 'mgcrea.ngStrap']);
+var app = angular.module("POS", ['ngRoute', 'ngStorage', 'ui.grid', 'HttpInterceptorFactory', 'mgcrea.ngStrap', 'SecurityFactory', 'SignInCtrl']);
 
 app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push('HttpInterceptor');
@@ -98,9 +98,9 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             controller: 'SignInController as ctrl'
         })
 
-        .when('/user', {
-            templateUrl: '../../app/views/user/list.html',
-            controller: 'UserController as ctrl',
+        .when('/POS', {
+            templateUrl: '../../app/views/pos/index.html',
+            controller: 'PosController as ctrl',
             resolve: {
                 Profiles: function (Catalog) {
                     return Catalog.get("profile");
