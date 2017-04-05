@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/05478eb92a04b36ea25246d0806b4ff2fd04b415/ngstorage/index.d.ts",
+    "raw": "registry:dt/ngstorage#0.3.11+20170131231947",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/05478eb92a04b36ea25246d0806b4ff2fd04b415/ngstorage/index.d.ts"
+  }
+}

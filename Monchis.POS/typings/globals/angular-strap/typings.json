@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/f7289bbf24664c938a5f6d4b04493aa70338b628/angular-strap/index.d.ts",
+    "raw": "registry:dt/angular-strap#2.2.0+20161201005346",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/f7289bbf24664c938a5f6d4b04493aa70338b628/angular-strap/index.d.ts"
+  }
+}
