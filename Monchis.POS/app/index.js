@@ -27,13 +27,14 @@ module.exports = function (routes, config) {
                         expiresIn: '24h'
                     });
 
-                    var startPage = "/Home";
+                    var startPage = "/home";
                     if (user.profile == Enums.Profiles.Vendedor) startPage = "/POS";
 
                     res.json({
                         success: true,
                         message: 'Login successfull!',
                         token: token,
+                        userid: user._id,
                         page: startPage
                     });
                 }

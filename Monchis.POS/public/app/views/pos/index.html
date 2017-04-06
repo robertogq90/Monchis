@@ -1,1 +1,13 @@
-﻿
+﻿<div class="col-xs-8 col-md-8 col-sm-">
+
+    <button class="btn btn-default btn-lg" style="margin:20px;" ng-repeat="item in products" ng-click="AddProduct(item)">
+        {{item.name}}
+    </button>
+
+</div>
+
+<div class="col-xs-4 col-md-4 col-sm-6">
+
+    <div class="gridStyle" ui-grid="GridConfig"></div>
+
+</div>

@@ -7,7 +7,8 @@
         req.then(function (res) {
             if (res.data.success) {
                 $localStorage.token = res.data.token;
-                $location.path('/home');
+                $localStorage.userid = res.data.userid;
+                $location.path(res.data.page);
             }
         });
     };

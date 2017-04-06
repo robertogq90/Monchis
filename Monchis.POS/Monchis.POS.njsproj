@@ -69,6 +69,7 @@
     <Content Include="public\stylesheets\bootstrap-theme.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
     <Content Include="public\stylesheets\style.styl" />
+    <Content Include="public\stylesheets\ui-grid.css" />
     <Content Include="public\templates\Popup.html" />
     <Content Include="README.md" />
     <Content Include="typings.json" />

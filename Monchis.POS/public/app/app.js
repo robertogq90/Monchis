@@ -1,5 +1,6 @@
 ﻿
-var app = angular.module("POS", ['ngRoute', 'ngStorage', 'ui.grid', 'HttpInterceptorFactory', 'mgcrea.ngStrap', 'SecurityFactory', 'SignInCtrl']);
+var app = angular.module("POS", ['ngRoute', 'ngStorage', 'ui.grid', 'HttpInterceptorFactory', 'mgcrea.ngStrap', 'SecurityFactory',
+    'SignInCtrl', 'HomeCtrl', 'PosCtrl', 'PosFactory']);
 
 app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push('HttpInterceptor');
@@ -37,6 +38,10 @@ app.controller('MainController', ['$scope', 'HttpInterceptor', '$localStorage', 
             var token = $localStorage.token;
             config.url = config.url.replace("~/", window.BaseUrl);
             config.headers['x-access-token'] = token;
+        }
+        else {
+            var token = $localStorage.token;
+            if (token == null) $location.path('/signin');
         }
 
     };
@@ -84,7 +89,7 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         })
 
         .when('/home', {
-            templateUrl: 'app/views/home/home.html',
+            templateUrl: '../../app/views/home/index.html',
             controller: 'HomeController as ctrl'
         })
 
@@ -100,13 +105,7 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
 
         .when('/POS', {
             templateUrl: '../../app/views/pos/index.html',
-            controller: 'PosController as ctrl',
-            resolve: {
-                Profiles: function (Catalog) {
-                    return Catalog.get("profile");
-                }
-            }
-
+            controller: 'PosController as ctrl'
         });
 
 }]);
