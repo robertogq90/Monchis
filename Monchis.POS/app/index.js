@@ -1,4 +1,10 @@
 ﻿var User = require('./models/User');
+var Product = require('./models/Product');
+var Ticket = require('./models/Ticket');
+
+
+require('date-utils').language('es');
+var s = require('string');
 var jwt = require('jsonwebtoken');
 var Enums = require('./models/Enum');
 var _ = require('underscore');
@@ -61,8 +67,6 @@ module.exports = function (routes, config) {
         }
     });
     
-    
-
     routes.post('/user', function (req, res) {
         var entity = new User();
         entity.userName = req.body.userName;
@@ -84,7 +88,84 @@ module.exports = function (routes, config) {
 
     });
 
-    
+    routes.post('/product', function (req, res) {
+        var entity = new Product();
+        entity.name = req.body.name;
+        entity.subtotal = req.body.subtotal;
+        entity.tax = req.body.tax;
+        entity.total = req.body.total;
+        entity.enabled = req.body.enabled;
+
+        entity.save(function (error) {
+            if (error) {
+                res.json({ message: "", data: error });
+                res.send(error);
+            }
+            else {
+                res.json({ message: "", data: entity });
+            }
+        });
+    });
+
+    routes.get('/product', function (req, res) {
+        Product.find({}).exec(function (error, data) {
+            if (error) res.send(error);
+
+            res.json(data);
+        });
+    });
+
+    routes.get('/product/:id', function (req, res) {
+        Product.find({ _id: req.params.id }).exec(function (error, data) {
+            if (error) res.send(error);
+
+            res.json(data);
+        });
+    });
+
+    routes.get('/product/enabled', function (req, res) {
+        Product.find({ enabled: true }).exec(function (error, data) {
+            if (error) res.send(error);
+
+            res.json(data);
+        });
+    });
+
+    routes.post('/ticket', function (req, res) {
+        var entity = new Ticket();
+        entity.ticketNumber = req.body.ticketNumber;
+        entity.date = Date.now();
+        entity.subtotal = req.body.subtotal;
+        entity.tax = req.body.tax;
+        entity.total = req.body.total;
+        entity.payment = req.body.payment;
+        entity.change = req.body.change;
+        entity.user = req.body.user;
+        entity.productList = req.body.productList;
+        
+        entity.find({ 'date': { '$gte': Date.today(), '$lt': Date.tomorrow() } }).exec(function (error, data) {
+            if (error) res.send(error);
+
+            var cantidad = data.length;
+            cantidad++;
+            var folio = cantidad.toString()
+            folio = S(folio).padLeft(5).s;
+            folio = S(folio).replaceAll(' ', '0').s;
+            entity.ticketNumber = entity.ticketNumber + folio;
+
+            entity.save(function (error) {
+                if (error) {
+                    res.json({ message: "", data: error });
+                    res.send(error);
+                }
+                else {
+                    res.json({ message: "", data: entity });
+                }
+            });
+
+        });
+    });
+
 
     routes.get('*', function (req, res) {
         res.sendfile('./public/index.html');

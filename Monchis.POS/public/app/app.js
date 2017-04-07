@@ -1,6 +1,6 @@
 ﻿
 var app = angular.module("POS", ['ngRoute', 'ngStorage', 'ui.grid', 'HttpInterceptorFactory', 'mgcrea.ngStrap', 'SecurityFactory',
-    'SignInCtrl', 'HomeCtrl', 'PosCtrl', 'PosFactory']);
+    'SignInCtrl', 'HomeCtrl', 'PosCtrl', 'PosFactory', 'ProductCtrl', 'ProductFactory', 'TemplateFactory']);
 
 app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push('HttpInterceptor');
@@ -106,6 +106,11 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         .when('/POS', {
             templateUrl: '../../app/views/pos/index.html',
             controller: 'PosController as ctrl'
+        })
+
+        .when('/product', {
+            templateUrl: '../../app/views/product/index.html',
+            controller: 'ProductController as ctrl'
         });
 
 }]);

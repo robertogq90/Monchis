@@ -32,13 +32,18 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="app\models\Enum.js" />
+    <Compile Include="app\models\Product.js" />
     <Compile Include="app\models\Profile.js" />
+    <Compile Include="app\models\Ticket.js" />
     <Compile Include="app\models\User.js" />
     <Compile Include="config\config.js" />
     <Compile Include="public\app\app.js" />
+    <Compile Include="public\app\factories\templates.js" />
     <Compile Include="public\app\views\home\HomeController.js" />
     <Compile Include="public\app\views\pos\POS.js" />
     <Compile Include="public\app\views\pos\PosController.js" />
+    <Compile Include="public\app\views\product\ProductController.js" />
+    <Compile Include="public\app\views\product\ProductFactory.js" />
     <Compile Include="public\app\views\security\securityFactory.js" />
     <Compile Include="public\app\views\security\SignInController.js" />
     <Compile Include="public\javascripts\angular-route.js" />
@@ -49,9 +54,12 @@
     <Compile Include="public\javascripts\angular-strap.tpl.min.js" />
     <Compile Include="public\javascripts\angular.js" />
     <Compile Include="public\javascripts\angular.min.js" />
+    <Compile Include="public\javascripts\date-utils.js" />
     <Compile Include="public\javascripts\HttpInterceptor.js" />
     <Compile Include="public\javascripts\ngStorage.js" />
     <Compile Include="public\javascripts\ngStorage.min.js" />
+    <Compile Include="public\javascripts\string.js" />
+    <Compile Include="public\javascripts\string.min.js" />
     <Compile Include="public\javascripts\ui-grid.js" />
     <Compile Include="public\javascripts\underscore-min.js" />
     <Compile Include="public\javascripts\underscore.js" />
@@ -60,6 +68,8 @@
     <Content Include="package.json" />
     <Content Include="public\app\views\home\index.html" />
     <Content Include="public\app\views\pos\index.html" />
+    <Content Include="public\app\views\product\index.html" />
+    <Content Include="public\app\views\product\single.tpl.html" />
     <Content Include="public\app\views\security\not_found.html" />
     <Content Include="public\app\views\security\signin.html" />
     <Content Include="public\javascripts\ui-grid.eot" />
@@ -68,8 +78,10 @@
     <Content Include="public\javascripts\ui-grid.woff" />
     <Content Include="public\stylesheets\bootstrap-theme.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
+    <Content Include="public\stylesheets\site.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="public\stylesheets\ui-grid.css" />
+    <Content Include="public\templates\GridHeaderDefault.html" />
     <Content Include="public\templates\Popup.html" />
     <Content Include="README.md" />
     <Content Include="typings.json" />
@@ -84,8 +96,10 @@
     <Folder Include="config\" />
     <Folder Include="app\" />
     <Folder Include="public\" />
+    <Folder Include="public\app\factories\" />
     <Folder Include="public\app\views\" />
     <Folder Include="public\app\views\home\" />
+    <Folder Include="public\app\views\product\" />
     <Folder Include="public\app\views\security\" />
     <Folder Include="public\app\views\pos\" />
     <Folder Include="public\images\" />

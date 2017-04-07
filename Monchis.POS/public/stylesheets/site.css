@@ -1,0 +1,16 @@
+﻿.pull-right{
+    float:right;
+    margin: 5px;
+}
+
+.cell-align-center{
+    text-align:center;
+}
+
+.cell-align-right{
+    text-align: right;
+}
+.cellTotals{
+    text-align:right;
+    border-bottom: 1px solid;
+}
