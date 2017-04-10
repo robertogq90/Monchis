@@ -1,0 +1,38 @@
+﻿<div class="col-xs-6 col-md-6 col-sm-6">
+
+    <button class="btn btn-default btn-lg" style="margin:20px;" ng-repeat="item in products" ng-click="AddProduct(item)">
+        {{item.name}}
+    </button>
+
+</div>
+
+<div class="col-xs-6 col-md-6 col-sm-6">
+
+    <div class="gridStyle" ui-grid="GridConfig"></div>
+    <table style="float:right;">
+        <tr>
+            <td>Subtotal:</td>
+            <td class="cellTotals"><span ng-bind="ticket.subtotal|currency"></span></td>
+        </tr>
+        <tr>
+            <td>IVA:</td>
+            <td class="cellTotals"><span ng-bind="ticket.tax|currency"></span></td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td class="cellTotals"><span ng-bind="ticket.total|currency"></span></td>
+        </tr>
+        <tr>
+            <td>Pago:</td>
+            <td class="cellTotals"><input type="number" ng-model="ticket.payment" style="text-align:right;" ng-blur="CalculateChange()" /></td>
+        </tr>
+        <tr>
+            <td>Cambio:</td>
+            <td class="cellTotals"><span ng-bind="ticket.change|currency"></span></td>
+        </tr>
+    </table>
+    <button class="pull-right btn btn-success bt-sm" ng-click="Payment()" ng-disabled="CanPay() == false">
+        <i class="glyphicon-shopping-cart"></i>Pagar
+    </button>
+
+</div>

@@ -5,19 +5,51 @@
     <meta charset="utf-8" />
     <title>MONCHIS POS</title>
 
+    <script type="text/javascript">
+			window.BaseUrl = window.location.protocol + "//" + window.location.host + "/";
+    </script>
+
     <link href="/stylesheets/bootstrap.css" rel="stylesheet" />
     <link href="/stylesheets/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <link href="/stylesheets/ui-grid.css" rel="stylesheet" />
+    <script src="/javascripts/date-utils.js"></script>
+    <script src="/javascripts/string.js"></script>
 
     <script type="text/javascript" src="/javascripts/angular.min.js"></script>
     <script type="text/javascript" src="/javascripts/angular-route.min.js"></script>
+    <script src="/javascripts/ngStorage.min.js"></script>
 
+    
+    <script src="/app/factories/templates.js"></script>
+    <script src="/javascripts/HttpInterceptor.js"></script>
+    <script src="/app/views/security/securityFactory.js"></script>
+    <script src="/app/views/pos/POS.js"></script>
+    <script src="/app/views/product/ProductFactory.js"></script>
+
+
+    <script src="/app/views/security/SignInController.js"></script>
+    <script src="/app/views/home/HomeController.js"></script>
+    <script src="/app/views/pos/PosController.js"></script>
+    <script src="app/views/product/ProductController.js"></script>
 
     <script src="/javascripts/underscore.js"></script>
     <script src="/javascripts/ui-grid.js"></script>
     <script src="javascripts/angular-strap.js"></script>
 
+    <script src="/app/app.js"></script>
+    
+
 </head>
-<body>
-    <h1>HOME!</h1>
+<body data-ng-app="POS" ng-controller="MainController">
+    <div class="row">
+        <button class="btn btn-primary btn-sm" ng-show="islogged()" ng-click="logout()">Salir</button>
+    </div>
+
+    <div class="container">
+
+        <div ng-show="showview" ng-view></div>
+
+    </div>
 </body>
 </html>

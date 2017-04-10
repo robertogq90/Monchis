@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 var router = express.Router();
-require('./routes/index')(router, configs);
+require('./app/index')(router, configs);
 app.use('/api', router);
 
 // error handlers

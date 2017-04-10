@@ -1,0 +1,22 @@
+﻿<div class="form-inline">
+    <div class="form-group">
+        <label for="name">Producto:</label>
+        <input type="text" class="form-control" id="name" name="name" ng-model="EditEntity.name" required />
+    </div>
+    <div class="form-group">
+        <label for="subtotal">PU:</label>
+        <input type="number" class="form-control" id="subtotal" name="subtotal" ng-model="EditEntity.subtotal" ng-blur="CalculateTotalProduct()" required />
+    </div>
+    <div class="form-group" ng-hide="true">
+        <label for="tax">Total IVA:</label>
+        <input type="number" class="form-control" id="tax" name="tax" ng-model="EditEntity.tax" />
+    </div>
+    <div class="form-group">
+        <label for="total">Precio Total:</label>
+        <input type="number" class="form-control" id="total" name="total" ng-disabled="true" ng-model="EditEntity.total" required />
+    </div>
+    <div class="form-group">
+        <label for="enabled">Activo:</label>
+        <input type="checkbox" class="form-control" id="enabled" name="enabled" ng-model="EditEntity.enabled" required />
+    </div>
+</div>
