@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="POS">
 <head>
     <meta charset="utf-8" />
     <title>MONCHIS POS</title>
@@ -13,6 +13,32 @@
     <link href="/stylesheets/bootstrap-theme.css" rel="stylesheet" />
     <link href="/stylesheets/site.css" rel="stylesheet" />
     <link href="/stylesheets/ui-grid.css" rel="stylesheet" />
+    
+    
+
+</head>
+<body ng-controller="MainController">
+
+    <div class="row">
+        <button class="btn btn-primary btn-sm" ng-show="islogged()" ng-click="logout()">Salir</button>
+    </div>
+
+    <div class="container">
+
+        <div ng-show="showview" ng-view></div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
     <script src="/javascripts/date-utils.js"></script>
     <script src="/javascripts/string.js"></script>
 
@@ -20,7 +46,7 @@
     <script type="text/javascript" src="/javascripts/angular-route.min.js"></script>
     <script src="/javascripts/ngStorage.min.js"></script>
 
-    
+
     <script src="/app/factories/templates.js"></script>
     <script src="/javascripts/HttpInterceptor.js"></script>
     <script src="/app/views/security/securityFactory.js"></script>
@@ -38,18 +64,5 @@
     <script src="javascripts/angular-strap.js"></script>
 
     <script src="/app/app.js"></script>
-    
-
-</head>
-<body data-ng-app="POS" ng-controller="MainController">
-    <div class="row">
-        <button class="btn btn-primary btn-sm" ng-show="islogged()" ng-click="logout()">Salir</button>
-    </div>
-
-    <div class="container">
-
-        <div ng-show="showview" ng-view></div>
-
-    </div>
 </body>
 </html>

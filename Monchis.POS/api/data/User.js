@@ -8,12 +8,12 @@ var UsuarioSchema = new Schema({
     lastName: { type: String, default: '' },
     profile: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'profiles'
+        ref: 'Profile'
     },
     enabled: { type: Boolean, default: true }
 });
 
 
-var Model = mongoose.model('User', UsuarioSchema);
+var Model = mongoose.model('User', UsuarioSchema, 'users');
 
 module.exports = Model;

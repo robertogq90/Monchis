@@ -27,18 +27,7 @@ var TicketSchema = new Schema({
     productList: [ProductTicketSchema]
 });
 
-function getPrice(num) {
-    return (num / 100).toFixed(2);
-};
-
-function setPrice(num) {
-    return num * 100;
-};
 
 var Model = mongoose.model('Ticket', TicketSchema);
-
-
-
-
 
 module.exports = Model;

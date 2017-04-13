@@ -30,13 +30,18 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\controllers\product.controller.js" />
+    <Compile Include="api\controllers\security.controller.js" />
+    <Compile Include="api\controllers\ticket.controller.js" />
+    <Compile Include="api\controllers\user.controller.js" />
+    <Compile Include="api\data\db.js" />
     <Compile Include="app.js" />
-    <Compile Include="app\models\Enum.js" />
-    <Compile Include="app\models\Product.js" />
-    <Compile Include="app\models\Profile.js" />
-    <Compile Include="app\models\Ticket.js" />
-    <Compile Include="app\models\User.js" />
-    <Compile Include="config\config.js" />
+    <Compile Include="api\data\Enum.js" />
+    <Compile Include="api\data\Product.js" />
+    <Compile Include="api\data\Profile.js" />
+    <Compile Include="api\data\Ticket.js" />
+    <Compile Include="api\data\User.js" />
+    <Compile Include="api\data\config.js" />
     <Compile Include="public\app\app.js" />
     <Compile Include="public\app\factories\templates.js" />
     <Compile Include="public\app\views\home\HomeController.js" />
@@ -63,7 +68,7 @@
     <Compile Include="public\javascripts\ui-grid.js" />
     <Compile Include="public\javascripts\underscore-min.js" />
     <Compile Include="public\javascripts\underscore.js" />
-    <Compile Include="app\index.js" />
+    <Compile Include="api\routes\index.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
     <Content Include="public\app\views\home\index.html" />
@@ -91,10 +96,12 @@
     <Content Include="views\error.jade" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\models\" />
+    <Folder Include="api\controllers\" />
+    <Folder Include="api\data\" />
+    <Folder Include="api\routes\" />
     <Folder Include="bin\" />
     <Folder Include="config\" />
-    <Folder Include="app\" />
+    <Folder Include="api\" />
     <Folder Include="public\" />
     <Folder Include="public\app\factories\" />
     <Folder Include="public\app\views\" />
